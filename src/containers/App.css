@@ -1,0 +1,16 @@
+@media screen and (min-width: 480px) {
+    .appContainer {
+        margin: 0px 0px 0px 0px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .appContainer {
+        margin: 0px 200px 0px 200px;
+    }
+}
+
+.moodicon {
+    width:100px;
+    -webkit-border-radius:75px;
+    -moz-border-radius:75px;
+}

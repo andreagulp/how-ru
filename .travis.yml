@@ -1,0 +1,23 @@
+dist: trusty
+sudo: false
+group: bluezone
+language: node_js
+
+node_js:
+  - '7.7'
+
+script:
+  - npm run build
+
+deploy:
+  - manifest: manifest.yml
+    edge: true
+    provider: cloudfoundry
+    api: https://api.w3ibm.bluemix.net
+    username: jvalentik@sk.ibm.com
+    password:
+      secure: "l80oAzO7qoX0sZ5goTI5zKwrhGPrmY8Knb/ykrg7XHQjlMz/jdGp6teM7h2ZgOuNeu2YJ9wj+nZWMPQxH4sFXK8ZY+j9RcVP7atODELaDlOTAc/O4hL9YYZaTzXUhja51MsaLhzR19oyGYk+X6y80taXkmz8A3GxwpP61PWzJwuN+cD5AUat3SGxUbpOnU80IKIydFu3TC+tADI/7GOhvvjgGhgYdMrP2kCT4SqiySyOGANYxeiPqKQ3nOwRboON4lgSarXy1oLmL4HYqA9EQUBBRCht8VaXf5d1xO+k+5m+WZCinb1IveYFZ+6e/uQmbUBm06ysovTcjknW83H6CPeg5Y5qGKIzHPm+UQRRJMI8fr1J6LTMGDdhktpuWrSCVkbYUJegyrh35Lnm/1Av4gZtF1iHLxWKUGSEUK8Z86VzqriCiPESujvC3aSfiP7qWOHe048qxi0geavKsBqXu/4xt3dMjznIjejhOP5ktQ4IekQbR/NSMY9t9FFlZLW/TGO8Mw3OQgyLBgN0XhnMpN/vYLy/sup+kqjW085Jf+AEqVEg7ymHl7qhzCCmQBHeVFCB1z5D7WIvSU1N44aOp5vRT2KHJI5+MCF7HgMw4kp8ydEopnQU0fG8SSNVWij4Un2450Gvg40RBsvDc1Q9yG+TvUKUnIRB7ZWub9iCwvk="
+    organization: ContinuousInnovationTeamSTS
+    space: prod
+    on:
+      branch: master

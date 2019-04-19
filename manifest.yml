@@ -1,0 +1,17 @@
+applications:
+- name:  howru
+  disk_quota: 512M
+  command: node ./src/server/app.js
+  path: .
+  memory: 512M
+  instances: 1
+  host: howru
+  domain: w3ibm.mybluemix.net
+
+services:
+- howru-cloudant
+- bluemail-howru
+- watson-howru
+
+env:
+    NODE_ENV: production
